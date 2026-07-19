@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoadRepair | Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+
+            min-height:100vh;
+
+            background:linear-gradient(
+            90deg,
+            #17262d 0%,
+            #33556d 60%,
+            #35c7f5 100%);
+
+            color:white;
+            overflow-x:hidden;
+        }
+
+        .navbar{
+
+            background:#152228;
+            padding:18px 70px;
+            border-bottom:1px solid rgba(255,255,255,.08);
+
+        }
+
+        .navbar-brand{
+
+            color:white;
+            font-size:42px;
+            font-weight:700;
+            text-decoration:none;
+
+        }
+
+        .navbar-brand:hover{
+
+            color:white;
+
+        }
+
+        .navbar-brand i{
+
+            margin-right:10px;
+
+        }
+
+        .nav-link{
+
+            color:white;
+            font-size:20px;
+            margin-left:35px;
+            transition:.3s;
+            position:relative;
+
+        }
+
+        .nav-link:hover{
+
+            color:#ffc107;
+
+        }
+
+        .nav-link::after{
+
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#ffc107;
+            transition:.3s;
+
+        }
+
+        .nav-link:hover::after{
+
+            width:100%;
+
+        }
+
+        .hero{
+
+            height:88vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+
+        }
+
+
+        .hero h1{
+
+            font-size:76px;
+            font-weight:800;
+
+            background:linear-gradient(
+            90deg,
+            #6aa8ff,
+            #0d6efd);
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+
+            margin-bottom:15px;
+
+        }
+
+        .hero h3{
+
+            font-size:38px;
+            font-weight:600;
+            margin-bottom:25px;
+
+        }
+
+        .hero p{
+
+            font-size:22px;
+            width:70%;
+            margin:auto;
+            color:rgba(255,255,255,.75);
+            line-height:1.8;
+
+        }
+
+        .hero-buttons{
+
+            margin-top:45px;
+
+        }
+
+        .btn-login{
+
+            background:#0d6efd;
+            color:white;
+            padding:14px 45px;
+            border-radius:40px;
+            text-decoration:none;
+            font-size:18px;
+            font-weight:600;
+            margin-right:15px;
+            transition:.3s;
+            display:inline-block;
+
+        }
+
+        .btn-login:hover{
+
+            background:#0b5ed7;
+            color:white;
+            transform:translateY(-3px);
+
+        }
+
+        .btn-register{
+
+            border:2px solid white;
+            color:white;
+            padding:14px 45px;
+            border-radius:40px;
+            text-decoration:none;
+            font-size:18px;
+            font-weight:600;
+            transition:.3s;
+            display:inline-block;
+
+        }
+
+        .btn-register:hover{
+
+            background:white;
+            color:#0d6efd;
+            transform:translateY(-3px);
+
+        }
+
+        @media(max-width:768px){
+
+            .navbar{
+
+                padding:18px 25px;
+
+            }
+
+            .navbar-brand{
+
+                font-size:30px;
+
+            }
+
+            .nav-link{
+
+                margin-left:15px;
+                font-size:16px;
+
+            }
+
+            .hero h1{
+
+                font-size:50px;
+
+            }
+
+            .hero h3{
+
+                font-size:24px;
+
+            }
+
+            .hero p{
+
+                width:90%;
+                font-size:18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{% url 'home' %}">
+            RoadRepair
+        </a>
+
+        <div class="ms-auto d-flex">
+
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div>
+
+        <h1>RoadRepair</h1>
+
+        <h3>Citizen Pothole Reporting System</h3>
+
+        <div class="hero-buttons">
+
+           <a href="{% url 'login' %}"
+   class="btn btn-lg me-4"
+   style="background-color:#bae6fd; color:#0c4a6e; border:none;">
+    Login
+</a>
+
+<a href="{% url 'register' %}"
+   class="btn btn-lg"
+   style="background-color:#bae6fd; color:#0c4a6e; border:none;">
+    Register
+</a>
+
+        </div>
+
+    </div>
+
+</section>
+</body>
+</html>

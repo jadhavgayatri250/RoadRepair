@@ -15,8 +15,8 @@ class Report:
 class Ward:
 
     ward_pincode = {
-        "4232203": "Ward A",
-        "4222001": "Ward B",
+        "423203": "Ward A",
+        "422001": "Ward B",
         "423301": "Ward C",
         "423108": "Ward D"
     }

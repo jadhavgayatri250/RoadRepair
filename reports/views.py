@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import user_passes_test
 
 from bson.objectid import ObjectId
 from datetime import datetime
@@ -85,7 +86,7 @@ def report(request):
                     "Complaint submitted successfully."
                 )
 
-                return redirect("dashboard")
+                return redirect("report")
 
             except Exception as e:
 

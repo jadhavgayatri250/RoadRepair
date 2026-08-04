@@ -32,8 +32,6 @@ def register(request):
         "form": form,
         "message": message
     })
-
-
 def login_view(request):
     message = ""
 
@@ -42,18 +40,30 @@ def login_view(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
 
+        print("Username:", username)
+        print("Password:", password)
+
         user = authenticate(
             request,
             username=username,
             password=password
         )
 
+        print("User:", user)
+
         if user is not None:
+            print("LOGIN SUCCESS")
             login(request, user)
+
+            if user.is_superuser:
+                print("ADMIN LOGIN")
+                return redirect("dashboard")
+
+            print("USER LOGIN")
             return redirect("report")
 
         else:
-
+            print("LOGIN FAILED")
             message = "Invalid Username or Password"
 
     return render(request, "login.html", {
